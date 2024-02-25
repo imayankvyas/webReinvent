@@ -5,8 +5,8 @@ import './App.css';
 import LoginForm from './Pages/Login';
 import SignUp from './Pages/SignUp';
 import Dashboard from "./Pages/Dashboard";
-import {Provider, useSelector} from "react-redux";
-import store, {RootState} from "./store";
+import {Provider} from "react-redux";
+import store from "./store";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
 const App: React.FC = () => {

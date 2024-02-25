@@ -20,13 +20,13 @@ const LoginForm: React.FC = () => {
   const handleLogin = async () => {
     try {
       const response = await Login(email, password);
-      console.log('Login Response:', response);
+
       dispatch(loginSuccess(response?.token));
       navigate("/dashboard")
       toast.success("Login Successfully");
     } catch (err:any) {
       setError(err.response.data.error);
-      console.log("ee",err.response.data.error);
+
       toast.error(err.response.data.error);
     }
   };

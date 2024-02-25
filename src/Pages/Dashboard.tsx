@@ -1,9 +1,8 @@
 import * as React from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
-import {Data, Login} from "../utils/service";
+import {Data} from "../utils/service";
 import {getData} from "../store/slices/dataSlice";
-import store, {RootState} from "../store";
 import {logout} from "../store/slices/authSlice";
 import {useNavigate} from "react-router";
 
@@ -12,8 +11,7 @@ export default function Dashboard() {
     const [error,setError] = useState('')
     const dispatch = useDispatch();
     const navigate = useNavigate()
-    const isAuthenticated = useSelector((state: RootState) => state.auth.isLoggedIn);
-    console.log("is",isAuthenticated)
+
     const handleLogout = ()=>{
         try{
             dispatch(logout())
@@ -30,6 +28,7 @@ export default function Dashboard() {
             setUsers(response?.data)
         } catch (err:any) {
             setError(err);
+
         }
     }
 

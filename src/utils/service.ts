@@ -1,6 +1,4 @@
 import axios from 'axios';
-import * as React from "react";
-import {toast} from "react-toastify";
 
 const api = axios.create({
     baseURL: 'https://reqres.in/api/',
